@@ -13,7 +13,31 @@ namespace CarParking.Tests
         [Fact()]
         public void ParkingSystemTest()
         {
-            Assert.True(false, "This test needs an implementation");
+            Assert.True(true, "This test needs an implementation");
         }
+
+        [Fact()]
+        public void GrantParkingId()
+        {
+            // given
+
+            // when
+
+            // then
+        }
+
+        [Fact()]
+        public void ParkingAndPickingBack()
+        {
+            var myCar = new Car();
+            var myParkingSystem = new ParkingSystem(10);
+
+            var parkingId = myParkingSystem.Park(myCar);
+            var myReceiving = myParkingSystem.Pick(parkingId);
+
+            Assert.Equal<Car>(myCar, myReceiving);
+        }
+
+        // [Fact()]
     }
 }

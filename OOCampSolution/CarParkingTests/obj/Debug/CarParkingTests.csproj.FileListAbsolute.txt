@@ -15,3 +15,9 @@ D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.core.xm
 D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\obj\Debug\CarParkingTests.csprojResolveAssemblyReference.cache
 D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\obj\Debug\CarParkingTests.dll
 D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\obj\Debug\CarParkingTests.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\Castle.Core.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\Moq.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\Castle.Core.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\Moq.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.execution.desktop.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.execution.desktop.xml

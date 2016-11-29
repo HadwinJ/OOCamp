@@ -16,15 +16,7 @@ namespace CarParking.Tests
             Assert.True(true, "This test needs an implementation");
         }
 
-        [Fact()]
-        public void GrantParkingId()
-        {
-            // given
-
-            // when
-
-            // then
-        }
+        
 
         [Fact()]
         public void ParkingAndPickingBack()
@@ -38,6 +30,18 @@ namespace CarParking.Tests
             Assert.Equal<Car>(myCar, myReceiving);
         }
 
-        // [Fact()]
+        [Fact()]
+        public void ShowAvailableSpace()
+        {
+            // given
+            var myParkingSystem = new ParkingSystem(10);
+            var myCar = new Car();
+
+            // when
+            var parkingId = myParkingSystem.Park(myCar);
+
+            // then
+            Assert.Equal(9, myParkingSystem.AvailableNumber);
+        }
     }
 }

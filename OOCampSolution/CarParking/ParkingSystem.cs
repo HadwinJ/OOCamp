@@ -8,31 +8,33 @@ namespace CarParking
 {
     public class ParkingSystem
     {
-        public string Name { get; set; }
-        public int Capacity { get; set; }
-        public int NextAvailableNumber { get; set; }
-        public Dictionary<int, Car> ParkingSpace { get; set; }
+        public int AvailableNumber { get; set; }
+
+        private int _nextAvailableNumber;
+        private Dictionary<int, Car> _parkingSpace;
 
         public ParkingSystem(int capacity)
         {
-            Capacity = capacity;
-            ParkingSpace = new Dictionary<int, Car>();
-            NextAvailableNumber = 10000;
+            AvailableNumber = capacity;
+            _parkingSpace = new Dictionary<int, Car>();
+            _nextAvailableNumber = 10000;
         }
 
         public int Park(Car myCar)
         {
-            if (ParkingSpace.Count == Capacity)
+            if (0 == AvailableNumber)
                 return 0;
-            var ticketId = NextAvailableNumber++;
-            ParkingSpace.Add(ticketId, myCar);
+            var ticketId = _nextAvailableNumber++;
+            AvailableNumber--;
+            _parkingSpace.Add(ticketId, myCar);
             return ticketId;
         }
 
         public Car Pick(int parkingId)
         {
-            var myCar = ParkingSpace[parkingId];
-            ParkingSpace.Remove(parkingId);
+            var myCar = _parkingSpace[parkingId];
+            _parkingSpace.Remove(parkingId);
+            AvailableNumber++;
             return myCar;
         }
     }

@@ -8,7 +8,7 @@ namespace CarParking
 {
     public class ParkingSystem
     {
-        public int AvailableNumber { get; set; }
+        public int AvailableNumber { get; private set; }
 
         private int _nextAvailableNumber;
         private Dictionary<int, Car> _parkingSpace;

@@ -31,6 +31,18 @@ namespace CarParking.Tests
         }
 
         [Fact()]
+        public void ShowInitialAvailableSpace()
+        {
+            // given
+            var myParkingSystem = new ParkingSystem(10);
+
+            // when
+
+            // then
+            Assert.Equal(10, myParkingSystem.AvailableNumber);
+        }
+
+        [Fact()]
         public void ShowAvailableSpace()
         {
             // given

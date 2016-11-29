@@ -1,0 +1,17 @@
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.abstractions.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.runner.utility.desktop.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.execution.desktop.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\CarParkingTests.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\CarParkingTests.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\CarParking.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.assert.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.core.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\CarParking.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.assert.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.assert.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.core.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\xunit.core.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\obj\Debug\CarParkingTests.csprojResolveAssemblyReference.cache
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\obj\Debug\CarParkingTests.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\obj\Debug\CarParkingTests.pdb

@@ -1,0 +1,15 @@
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\CarParking.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\CarParking.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\obj\Debug\CarParking.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\obj\Debug\CarParking.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.abstractions.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.assert.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.core.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.execution.desktop.dll
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.abstractions.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.assert.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.assert.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.core.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.core.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.execution.desktop.pdb
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.execution.desktop.xml

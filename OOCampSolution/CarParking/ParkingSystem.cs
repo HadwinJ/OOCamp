@@ -15,6 +15,9 @@ namespace CarParking
 
         public ParkingSystem(int capacity)
         {
+            // Guid g = Guid.NewGuid();
+            // Console.WriteLine(g);
+
             AvailableNumber = capacity;
             _parkingSpace = new Dictionary<int, Car>();
             _nextAvailableNumber = 10000;
@@ -32,10 +35,15 @@ namespace CarParking
 
         public Car Pick(int parkingId)
         {
-            var myCar = _parkingSpace[parkingId];
-            _parkingSpace.Remove(parkingId);
-            AvailableNumber++;
-            return myCar;
+            if (_parkingSpace.ContainsKey(parkingId))
+            {
+                var myCar = _parkingSpace[parkingId];
+                _parkingSpace.Remove(parkingId);
+                AvailableNumber++;
+                return myCar;
+            }
+            return null;
+            
         }
     }
 }

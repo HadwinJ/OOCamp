@@ -8,10 +8,18 @@ namespace CarParking
 {
     public class ParkingSystem
     {
+        const int defaultCapacity = 10;
         public int AvailableNumber { get; private set; }
 
         private int _nextAvailableNumber;
         private Dictionary<int, Car> _parkingSpace;
+
+        public ParkingSystem()
+        {
+            AvailableNumber = defaultCapacity;
+            _parkingSpace = new Dictionary<int, Car>();
+            _nextAvailableNumber = 10000;
+        }
 
         public ParkingSystem(int capacity)
         {
@@ -43,7 +51,7 @@ namespace CarParking
                 return myCar;
             }
             return null;
-            
+
         }
     }
 }

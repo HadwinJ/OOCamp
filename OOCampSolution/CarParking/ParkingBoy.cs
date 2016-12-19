@@ -8,55 +8,49 @@ namespace CarParking
 {
     public class ParkingBoy
     {
-        const int maxNumberOfParkingSystem = 10;
-        public int NumberOfParkingSystem { get; set; }
+        const int maxNumberOfParkingSystem = 3;
+        public int NumberOfParkingSystem { get; private set; }
 
-        public ParkingSystem[] ParkingSystems { get; set; }
+        public List<ParkingStation> ParkingStations { get; set; }
         public int AvailableNumber
         {
-            get { return ParkingSystems.Sum(p=>p.AvailableNumber); }
+            get { return ParkingStations.Sum(p => p.AvailableNumber); }
         }
-        
+
         public ParkingBoy()
         {
-            ParkingSystems = new ParkingSystem[maxNumberOfParkingSystem];
-            NumberOfParkingSystem = maxNumberOfParkingSystem;
+            ParkingStations = new List<ParkingStation>();
+            ParkingStations.Add(new ParkingStation("Park01"));
+            ParkingStations.Add(new ParkingStation("Park02"));
 
-            for (int i = 0; i < maxNumberOfParkingSystem; i++)
-            {
-                ParkingSystems[i] = new ParkingSystem();
-            }
+            NumberOfParkingSystem = ParkingStations.Count;
+
         }
 
-        public Car Pick(Tuple<int, int> parkingId)
+        public ParkingBoy(List<ParkingStation> _parkingSystems)
         {
-            return ParkingSystems[parkingId.Item1].Pick(parkingId.Item2);
+            ParkingStations = _parkingSystems;
+            NumberOfParkingSystem = _parkingSystems.Count;
         }
 
-        public Tuple<int, int> Park(Car myCar)
+        public Car Pick(Tuple<string, int> parkingTicket)
         {
-            for (int i = 0; i < NumberOfParkingSystem; i++)
+            return (parkingTicket != null) ? ParkingStations.FirstOrDefault(p => p.Name == parkingTicket.Item1)?.Pick(parkingTicket) : null;
+        }
+
+        public Tuple<string, int> Park(Car myCar)
+        {
+            var maxAvailableNumber = ParkingStations.Max(p => p.AvailableNumber);
+            if (maxAvailableNumber > 0)
             {
-
-                if (ParkingSystems[i].AvailableNumber > 0)
-                {
-                    var parkingId = ParkingSystems[i].Park(myCar);
-                    return new Tuple<int, int>(i, parkingId);
-                }
-
+                var parkingId = ParkingStations.FirstOrDefault(p => p.AvailableNumber == maxAvailableNumber).Park(myCar);
+                return parkingId;
             }
+
+
             return null;
         }
 
-        public ParkingBoy(int numberOfParkingSystem)
-        {
-            ParkingSystems = new ParkingSystem[numberOfParkingSystem];
-            NumberOfParkingSystem = numberOfParkingSystem;
 
-            for (int i = 0; i < numberOfParkingSystem; i++)
-            {
-                ParkingSystems[i] = new ParkingSystem();
-            }
-        }
     }
 }

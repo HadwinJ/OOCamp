@@ -6,22 +6,25 @@ using System.Threading.Tasks;
 
 namespace CarParking
 {
-    public class ParkingSystem
+    public class ParkingStation
     {
         const int defaultCapacity = 10;
+
+        public string Name { get; set; }
         public int AvailableNumber { get; private set; }
 
         private int _nextAvailableNumber;
         private Dictionary<int, Car> _parkingSpace;
 
-        public ParkingSystem()
+        public ParkingStation(string name)
         {
             AvailableNumber = defaultCapacity;
             _parkingSpace = new Dictionary<int, Car>();
             _nextAvailableNumber = 10000;
+            Name = name;
         }
 
-        public ParkingSystem(int capacity)
+        public ParkingStation(string name, int capacity)
         {
             // Guid g = Guid.NewGuid();
             // Console.WriteLine(g);
@@ -29,27 +32,32 @@ namespace CarParking
             AvailableNumber = capacity;
             _parkingSpace = new Dictionary<int, Car>();
             _nextAvailableNumber = 10000;
+            Name = name;
         }
 
-        public int Park(Car myCar)
+        public Tuple<string, int> Park(Car myCar)
         {
             if (0 == AvailableNumber)
-                return 0;
+                return null;
             var ticketId = _nextAvailableNumber++;
             AvailableNumber--;
             _parkingSpace.Add(ticketId, myCar);
-            return ticketId;
+            return new Tuple<string,int>(Name, ticketId);
         }
 
-        public Car Pick(int parkingId)
+        public Car Pick(Tuple<string, int> parkingTicket)
         {
-            if (_parkingSpace.ContainsKey(parkingId))
+            if (parkingTicket.Item1 == Name)
             {
-                var myCar = _parkingSpace[parkingId];
-                _parkingSpace.Remove(parkingId);
-                AvailableNumber++;
-                return myCar;
+                if (_parkingSpace.ContainsKey(parkingTicket.Item2))
+                {
+                    var myCar = _parkingSpace[parkingTicket.Item2];
+                    _parkingSpace.Remove(parkingTicket.Item2);
+                    AvailableNumber++;
+                    return myCar;
+                }
             }
+            
             return null;
 
         }

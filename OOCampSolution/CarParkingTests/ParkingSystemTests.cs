@@ -77,7 +77,7 @@ namespace CarParking.Tests
         }
 
         [Fact()]
-        public void Pick_ReturnNull_WhenInvalidNumber()
+        public void Pick_ReturnNull_WhenUseTwice()
         {
             // given
             var myParkingSystem = new ParkingStation("ParkingSpace01", 10);
@@ -89,10 +89,12 @@ namespace CarParking.Tests
             var parkingId1 = myParkingSystem.Park(myCar1);
             var parkingId2 = myParkingSystem.Park(myCar2);
             var parkingId3 = myParkingSystem.Park(myCar3);
-            var myCar = myParkingSystem.Pick(new Tuple<string, int>("ParkingSpace01", 11000));
+            var myPickupCar1 = myParkingSystem.Pick(parkingId2);
+            var myPickupCar2 = myParkingSystem.Pick(parkingId2);
 
             // then
-            Assert.Equal(null, myCar);
+            Assert.Equal(myCar2, myPickupCar1);
+            Assert.Equal(null, myPickupCar2);
         }
 
         [Fact()]

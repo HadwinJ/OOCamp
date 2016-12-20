@@ -38,17 +38,10 @@ namespace CarParking
             return (parkingTicket != null) ? ParkingStations.FirstOrDefault(p => p.Name == parkingTicket.Item1)?.Pick(parkingTicket) : null;
         }
 
-        public Tuple<string, int> Park(Car myCar)
+        public virtual Tuple<string, int> Park(Car myCar)
         {
-            var maxAvailableNumber = ParkingStations.Max(p => p.AvailableNumber);
-            if (maxAvailableNumber > 0)
-            {
-                var parkingId = ParkingStations.FirstOrDefault(p => p.AvailableNumber == maxAvailableNumber).Park(myCar);
-                return parkingId;
-            }
-
-
-            return null;
+            var parkingId = ParkingStations.FirstOrDefault(p => p.AvailableNumber > 0)?.Park(myCar);
+            return parkingId;
         }
 
 

@@ -105,7 +105,7 @@ namespace CarParking.Tests
         public void Parking_UseSecondParkingSystem_WhenFirstZeroAvailable()
         {
             // given
-            var myParkingBoy = new ParkingBoy(new List<ParkingStation> { new ParkingStation("park01",6), new ParkingStation("park02", 6) });
+            var myParkingBoy = new ParkingBoy(new List<ParkingStation> { new ParkingStation("park01", 6), new ParkingStation("park02", 6) });
             var myCar1 = new Car();
             var myCar2 = new Car();
             var myCar3 = new Car();
@@ -134,16 +134,16 @@ namespace CarParking.Tests
 
             // then
             Assert.Equal(new Tuple<string, int>("park01", 10000), parkingId1);
-            Assert.Equal(new Tuple<string, int>("park02", 10000), parkingId2);
-            Assert.Equal(new Tuple<string, int>("park01", 10001), parkingId3);
-            Assert.Equal(new Tuple<string, int>("park02", 10001), parkingId4);
-            Assert.Equal(new Tuple<string, int>("park01", 10002), parkingId5);
-            Assert.Equal(new Tuple<string, int>("park02", 10002), parkingId6);
-            Assert.Equal(new Tuple<string, int>("park01", 10003), parkingId7);
-            Assert.Equal(new Tuple<string, int>("park02", 10003), parkingId8);
-            Assert.Equal(new Tuple<string, int>("park01", 10004), parkingId9);
-            Assert.Equal(new Tuple<string, int>("park02", 10004), parkingId10);
-            Assert.Equal(new Tuple<string, int>("park01", 10005), parkingId11);
+            Assert.Equal(new Tuple<string, int>("park01", 10001), parkingId2);
+            Assert.Equal(new Tuple<string, int>("park01", 10002), parkingId3);
+            Assert.Equal(new Tuple<string, int>("park01", 10003), parkingId4);
+            Assert.Equal(new Tuple<string, int>("park01", 10004), parkingId5);
+            Assert.Equal(new Tuple<string, int>("park01", 10005), parkingId6);
+            Assert.Equal(new Tuple<string, int>("park02", 10000), parkingId7);
+            Assert.Equal(new Tuple<string, int>("park02", 10001), parkingId8);
+            Assert.Equal(new Tuple<string, int>("park02", 10002), parkingId9);
+            Assert.Equal(new Tuple<string, int>("park02", 10003), parkingId10);
+            Assert.Equal(new Tuple<string, int>("park02", 10004), parkingId11);
         }
 
         [Fact()]
@@ -178,28 +178,5 @@ namespace CarParking.Tests
             Assert.Equal(null, myCar);
         }
 
-        [Fact()]
-        public void Park_PutInMostAvailableSystem_WhenParkCar()
-        {
-            // given
-            var myParkingBoy = new ParkingBoy(new List<ParkingStation> { new ParkingStation("park01",3), new ParkingStation("park02",6) });
-
-            // when
-            var myCar1 = new Car();
-            var myCar2 = new Car();
-            var myCar3 = new Car();
-            var myCar4 = new Car();
-
-            var parkingId1 = myParkingBoy.Park(myCar1);
-            var parkingId2 = myParkingBoy.Park(myCar2);
-            var parkingId3 = myParkingBoy.Park(myCar3);
-            var parkingId4 = myParkingBoy.Park(myCar4);
-
-            // then
-            Assert.Equal(new Tuple<string, int>("park02", 10000), parkingId1);
-            Assert.Equal(new Tuple<string, int>("park02", 10001), parkingId2);
-            Assert.Equal(new Tuple<string, int>("park02", 10002), parkingId3);
-            Assert.Equal(new Tuple<string, int>("park01", 10000), parkingId4);
-        }
     }
 }

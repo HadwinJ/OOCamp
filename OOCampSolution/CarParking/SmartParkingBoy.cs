@@ -44,15 +44,16 @@ namespace CarParking
 
         public override Tuple<string, int> Park(Car myCar)
         {
-            var maxAvailableNumber = ParkingStations.Max(p => p.AvailableNumber);
-            if (maxAvailableNumber > 0)
-            {
-                var parkingId = ParkingStations.FirstOrDefault(p => p.AvailableNumber == maxAvailableNumber).Park(myCar);
-                return parkingId;
-            }
+            //var maxAvailableNumber = ParkingStations.Max(p => p.AvailableNumber);
+            //if (maxAvailableNumber > 0)
+            //{
+            //    var parkingId = ParkingStations.FirstOrDefault(p => p.AvailableNumber == maxAvailableNumber).Park(myCar);
+            //    return parkingId;
+            //}
 
+            var parkingId = ParkingStations.OrderByDescending(p=>p.AvailableNumber).FirstOrDefault().Park(myCar);
 
-            return null;
+            return parkingId;
         }
 
 

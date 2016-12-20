@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="SuperParkingBoy.cs" />
     <Compile Include="SmartParkingBoy.cs" />
     <Compile Include="ParkingBoy.cs" />
     <Compile Include="ParkingStation.cs" />

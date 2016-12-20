@@ -11,6 +11,8 @@ namespace CarParking
         const int defaultCapacity = 10;
 
         public string Name { get; set; }
+
+        public int TotalCapacity { get; private set; }
         public int AvailableNumber { get; private set; }
 
         private int _nextAvailableNumber;
@@ -19,6 +21,7 @@ namespace CarParking
         public ParkingStation(string name)
         {
             AvailableNumber = defaultCapacity;
+            TotalCapacity = defaultCapacity;
             _parkingSpace = new Dictionary<int, Car>();
             _nextAvailableNumber = 10000;
             Name = name;
@@ -28,8 +31,10 @@ namespace CarParking
         {
             // Guid g = Guid.NewGuid();
             // Console.WriteLine(g);
+            if (capacity <= 0) throw new ArgumentOutOfRangeException("capacity");
 
             AvailableNumber = capacity;
+            TotalCapacity = capacity;
             _parkingSpace = new Dictionary<int, Car>();
             _nextAvailableNumber = 10000;
             Name = name;

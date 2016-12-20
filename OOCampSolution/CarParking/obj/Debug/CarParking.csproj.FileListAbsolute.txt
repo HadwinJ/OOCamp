@@ -13,3 +13,4 @@ D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.core.pdb
 D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.core.xml
 D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.execution.desktop.pdb
 D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\bin\Debug\xunit.execution.desktop.xml
+D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParking\obj\Debug\CarParking.csprojResolveAssemblyReference.cache

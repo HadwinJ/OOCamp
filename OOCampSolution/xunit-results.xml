@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assemblies>
+  <assembly name="D:\Projects\DOTNET\OOCamp\OOCampSolution\CarParkingTests\bin\Debug\CarParkingTests.DLL" environment="64-bit .NET 4.0.30319.42000 [collection-per-class, parallel (8 threads)]" test-framework="xUnit.net 2.1.0.3179" run-date="2016-12-22" run-time="10:48:24" config-file="D:\Projects\DOTNET\OOCamp\OOCampSolution\packages\xunit.runner.console.2.1.0\tools\xunit.console.exe.Config" total="33" passed="33" failed="0" skipped="0" time="0.153" errors="0">
+    <errors />
+    <collection total="8" passed="8" failed="0" skipped="0" name="Test collection for CarParking.Tests.ParkingBoyTests" time="0.037">
+      <test name="CarParking.Tests.ParkingBoyTests.ShowInitialAvailableSpace" type="CarParking.Tests.ParkingBoyTests" method="ShowInitialAvailableSpace" time="0.033234" result="Pass" />
+      <test name="CarParking.Tests.ParkingBoyTests.Parking_ReturnNull_WhenZeroAvailable" type="CarParking.Tests.ParkingBoyTests" method="Parking_ReturnNull_WhenZeroAvailable" time="0.0017992" result="Pass" />
+      <test name="CarParking.Tests.ParkingBoyTests.ShowAvailableSpace" type="CarParking.Tests.ParkingBoyTests" method="ShowAvailableSpace" time="0.0001815" result="Pass" />
+      <test name="CarParking.Tests.ParkingBoyTests.Parking_UseSecondParkingSystem_WhenFirstZeroAvailable" type="CarParking.Tests.ParkingBoyTests" method="Parking_UseSecondParkingSystem_WhenFirstZeroAvailable" time="0.0008368" result="Pass" />
+      <test name="CarParking.Tests.ParkingBoyTests.Pick_ReturnNull_WhenInvalidNumber" type="CarParking.Tests.ParkingBoyTests" method="Pick_ReturnNull_WhenInvalidNumber" time="0.0002593" result="Pass" />
+      <test name="CarParking.Tests.ParkingBoyTests.ParkingBoyTest" type="CarParking.Tests.ParkingBoyTests" method="ParkingBoyTest" time="0.0002806" result="Pass" />
+      <test name="CarParking.Tests.ParkingBoyTests.Pick_ReturnNull_WhenNoCar" type="CarParking.Tests.ParkingBoyTests" method="Pick_ReturnNull_WhenNoCar" time="0.0001776" result="Pass" />
+      <test name="CarParking.Tests.ParkingBoyTests.ParkingAndPickingBack" type="CarParking.Tests.ParkingBoyTests" method="ParkingAndPickingBack" time="0.0001894" result="Pass" />
+    </collection>
+    <collection total="9" passed="9" failed="0" skipped="0" name="Test collection for CarParking.Tests.SuperParkingBoyTests" time="0.039">
+      <test name="CarParking.Tests.SuperParkingBoyTests.Pick_ReturnNull_WhenNoCar" type="CarParking.Tests.SuperParkingBoyTests" method="Pick_ReturnNull_WhenNoCar" time="0.0324804" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.ShowInitialAvailableSpace" type="CarParking.Tests.SuperParkingBoyTests" method="ShowInitialAvailableSpace" time="0.000142" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.Parking_UseSecondParkingSystem_WhenFirstZeroAvailable" type="CarParking.Tests.SuperParkingBoyTests" method="Parking_UseSecondParkingSystem_WhenFirstZeroAvailable" time="0.0037272" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.SuperParkingBoyTest" type="CarParking.Tests.SuperParkingBoyTests" method="SuperParkingBoyTest" time="0.000144" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.Parking_ReturnNull_WhenZeroAvailable" type="CarParking.Tests.SuperParkingBoyTests" method="Parking_ReturnNull_WhenZeroAvailable" time="0.0012746" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.Pick_ReturnNull_WhenInvalidNumber" type="CarParking.Tests.SuperParkingBoyTests" method="Pick_ReturnNull_WhenInvalidNumber" time="0.0003437" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.Park_PutInMostAvailableSystem_WhenParkCar" type="CarParking.Tests.SuperParkingBoyTests" method="Park_PutInMostAvailableSystem_WhenParkCar" time="0.0006355" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.ParkingAndPickingBack" type="CarParking.Tests.SuperParkingBoyTests" method="ParkingAndPickingBack" time="0.0002281" result="Pass" />
+      <test name="CarParking.Tests.SuperParkingBoyTests.ShowAvailableSpace" type="CarParking.Tests.SuperParkingBoyTests" method="ShowAvailableSpace" time="0.0002217" result="Pass" />
+    </collection>
+    <collection total="9" passed="9" failed="0" skipped="0" name="Test collection for CarParking.Tests.SmartParkingBoyTests" time="0.039">
+      <test name="CarParking.Tests.SmartParkingBoyTests.Park_PutInMostAvailableSystem_WhenParkCar" type="CarParking.Tests.SmartParkingBoyTests" method="Park_PutInMostAvailableSystem_WhenParkCar" time="0.0327924" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.Pick_ReturnNull_WhenInvalidNumber" type="CarParking.Tests.SmartParkingBoyTests" method="Pick_ReturnNull_WhenInvalidNumber" time="0.0003785" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.ParkingAndPickingBack" type="CarParking.Tests.SmartParkingBoyTests" method="ParkingAndPickingBack" time="0.0037007" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.Parking_ReturnNull_WhenZeroAvailable" type="CarParking.Tests.SmartParkingBoyTests" method="Parking_ReturnNull_WhenZeroAvailable" time="0.0008948" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.Pick_ReturnNull_WhenNoCar" type="CarParking.Tests.SmartParkingBoyTests" method="Pick_ReturnNull_WhenNoCar" time="0.0001696" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.Parking_UseSecondParkingSystem_WhenFirstZeroAvailable" type="CarParking.Tests.SmartParkingBoyTests" method="Parking_UseSecondParkingSystem_WhenFirstZeroAvailable" time="0.0008853" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.SmartParkingBoyTest" type="CarParking.Tests.SmartParkingBoyTests" method="SmartParkingBoyTest" time="0.0001084" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.ShowInitialAvailableSpace" type="CarParking.Tests.SmartParkingBoyTests" method="ShowInitialAvailableSpace" time="0.0001313" result="Pass" />
+      <test name="CarParking.Tests.SmartParkingBoyTests.ShowAvailableSpace" type="CarParking.Tests.SmartParkingBoyTests" method="ShowAvailableSpace" time="0.0001902" result="Pass" />
+    </collection>
+    <collection total="7" passed="7" failed="0" skipped="0" name="Test collection for CarParking.Tests.ParkingSystemTests" time="0.033">
+      <test name="CarParking.Tests.ParkingSystemTests.ParkingSystemTest" type="CarParking.Tests.ParkingSystemTests" method="ParkingSystemTest" time="0.0289135" result="Pass" />
+      <test name="CarParking.Tests.ParkingSystemTests.ShowAvailableSpace" type="CarParking.Tests.ParkingSystemTests" method="ShowAvailableSpace" time="0.0001914" result="Pass" />
+      <test name="CarParking.Tests.ParkingSystemTests.Parking_ReturnZero_WhenZeroAvailable" type="CarParking.Tests.ParkingSystemTests" method="Parking_ReturnZero_WhenZeroAvailable" time="0.000307" result="Pass" />
+      <test name="CarParking.Tests.ParkingSystemTests.Pick_ReturnNull_WhenNoCar" type="CarParking.Tests.ParkingSystemTests" method="Pick_ReturnNull_WhenNoCar" time="0.0004334" result="Pass" />
+      <test name="CarParking.Tests.ParkingSystemTests.ShowInitialAvailableSpace" type="CarParking.Tests.ParkingSystemTests" method="ShowInitialAvailableSpace" time="0.0001901" result="Pass" />
+      <test name="CarParking.Tests.ParkingSystemTests.ParkingAndPickingBack" type="CarParking.Tests.ParkingSystemTests" method="ParkingAndPickingBack" time="0.0029325" result="Pass" />
+      <test name="CarParking.Tests.ParkingSystemTests.Pick_ReturnNull_WhenUseTwice" type="CarParking.Tests.ParkingSystemTests" method="Pick_ReturnNull_WhenUseTwice" time="0.0004191" result="Pass" />
+    </collection>
+  </assembly>
+</assemblies>

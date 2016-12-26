@@ -18,16 +18,8 @@ namespace CarParking
         private int _nextAvailableNumber;
         private Dictionary<int, Car> _parkingSpace;
 
-        public ParkingStation(string name)
-        {
-            AvailableNumber = defaultCapacity;
-            TotalCapacity = defaultCapacity;
-            _parkingSpace = new Dictionary<int, Car>();
-            _nextAvailableNumber = 10000;
-            Name = name;
-        }
 
-        public ParkingStation(string name, int capacity)
+        public ParkingStation(string name, int capacity = defaultCapacity)
         {
             // Guid g = Guid.NewGuid();
             // Console.WriteLine(g);

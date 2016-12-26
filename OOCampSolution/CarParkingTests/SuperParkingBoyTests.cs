@@ -179,7 +179,7 @@ namespace CarParking.Tests
         }
 
         [Fact()]
-        public void Park_PutInMostAvailableSystem_WhenParkCar()
+        public void Park_PutInMostHighRatioAvailableSystem_WhenParkCar()
         {
             // given
             var mySuperParkingBoy = new SuperParkingBoy(new List<ParkingStation> { new ParkingStation("park01", 3), new ParkingStation("park02", 5) });

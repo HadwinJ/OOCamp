@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarParking
 {
-    public class ParkingBoy
+    public class FuncParkingBase
     {
 
         public List<ParkingStation> ParkingStations { get; set; }
@@ -15,16 +15,17 @@ namespace CarParking
             get { return ParkingStations.Sum(p => p.AvailableNumber); }
         }
 
-        public ParkingBoy()
+
+        public FuncParkingBase(List<ParkingStation> parkingSystems = null,
+            Func<List<ParkingStation>, ParkingStation> findParkingStationFunc = null)
         {
-            ParkingStations = new List<ParkingStation>() {
+            ParkingStations = (null != parkingSystems) ? parkingSystems :
+                new List<ParkingStation>() {
                 new ParkingStation("Park01"),
                 new ParkingStation("Park02")};
-        }
 
-        public ParkingBoy(List<ParkingStation> _parkingSystems)
-        {
-            ParkingStations = _parkingSystems;
+            FindParkingStationFunc = (null != findParkingStationFunc) ? findParkingStationFunc :
+                ps => ps.FirstOrDefault(p => p.AvailableNumber > 0);
         }
 
         public Car Pick(Tuple<string, int> parkingTicket)
@@ -32,9 +33,12 @@ namespace CarParking
             return (parkingTicket != null) ? ParkingStations.FirstOrDefault(p => p.Name == parkingTicket.Item1)?.Pick(parkingTicket) : null;
         }
 
-        public virtual Tuple<string, int> Park(Car myCar)
+
+        public Func<List<ParkingStation>, ParkingStation> FindParkingStationFunc { get; }
+
+        public Tuple<string, int> Park(Car myCar)
         {
-            var parkingId = ParkingStations.FirstOrDefault(p => p.AvailableNumber > 0)?.Park(myCar);
+            var parkingId = FindParkingStationFunc(ParkingStations)?.Park(myCar);
             return parkingId;
         }
 

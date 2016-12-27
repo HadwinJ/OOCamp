@@ -15,16 +15,13 @@ namespace CarParking
             get { return ParkingStations.Sum(p => p.AvailableNumber); }
         }
 
-        public ParkingBoy()
-        {
-            ParkingStations = new List<ParkingStation>() {
-                new ParkingStation("Park01"),
-                new ParkingStation("Park02")};
-        }
 
-        public ParkingBoy(List<ParkingStation> _parkingSystems)
+        public ParkingBoy(List<ParkingStation> parkingSystems = null)
         {
-            ParkingStations = _parkingSystems;
+            ParkingStations = (parkingSystems != null) ? parkingSystems :
+                    new List<ParkingStation>() {
+                        new ParkingStation("Park01"),
+                        new ParkingStation("Park02")};
         }
 
         public Car Pick(Tuple<string, int> parkingTicket)

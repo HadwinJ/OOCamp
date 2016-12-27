@@ -34,7 +34,7 @@ namespace CarParking
         }
 
 
-        public Func<List<ParkingStation>, ParkingStation> FindParkingStationFunc { get; }
+        private Func<List<ParkingStation>, ParkingStation> FindParkingStationFunc { get; }
 
         public Tuple<string, int> Park(Car myCar)
         {

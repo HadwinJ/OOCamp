@@ -8,7 +8,16 @@ namespace CarParking
 {
     public class ParkingManager
     {
+
         private List<ParkingBoy> _parkingBoyList = new List<ParkingBoy>();
+        public ParkingManager()
+        { }
+
+        public ParkingManager(List<ParkingBoy> parkingBoyList)
+        {
+            _parkingBoyList = parkingBoyList;
+        }
+
 
         public int AvailableNumber
         {
@@ -30,6 +39,11 @@ namespace CarParking
         {
             var parkingBoy = _parkingBoyList.Where(p => p.ParkingStations.Any(ps => ps.Name == parkingId.Item1)).FirstOrDefault();
             return parkingBoy.Pick(parkingId);
+        }
+
+        public Tuple<string, int> Park(Car myCar, ParkingBoy myParkingBoy)
+        {
+            return myParkingBoy?.Park(myCar);
         }
     }
 }

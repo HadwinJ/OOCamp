@@ -9,10 +9,8 @@ namespace CarParking
     public class SmartParkingBoy : ParkingBoy
     {
 
-        public SmartParkingBoy() : base()
-        { }
 
-        public SmartParkingBoy(List<ParkingStation> _parkingSystems) : base(_parkingSystems)
+        public SmartParkingBoy(String name = "DefaultSmartParkingBoy", List<ParkingStation> parkingSystems = null) : base(name, parkingSystems)
         { }
 
 

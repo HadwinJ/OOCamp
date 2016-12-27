@@ -8,23 +8,24 @@ namespace CarParking
 {
     public class ParkingBoy
     {
-
+        public string Name { get; }
         public List<ParkingStation> ParkingStations { get; set; }
-        public int AvailableNumber
+        public virtual int AvailableNumber
         {
             get { return ParkingStations.Sum(p => p.AvailableNumber); }
         }
 
 
-        public ParkingBoy(List<ParkingStation> parkingSystems = null)
+        public ParkingBoy(String name = "DefaultParkingBoy", List<ParkingStation> parkingSystems = null)
         {
+            Name = name;
             ParkingStations = (parkingSystems != null) ? parkingSystems :
                     new List<ParkingStation>() {
                         new ParkingStation("Park01"),
                         new ParkingStation("Park02")};
         }
 
-        public Car Pick(Tuple<string, int> parkingTicket)
+        public virtual Car Pick(Tuple<string, int> parkingTicket)
         {
             return (parkingTicket != null) ? ParkingStations.FirstOrDefault(p => p.Name == parkingTicket.Item1)?.Pick(parkingTicket) : null;
         }

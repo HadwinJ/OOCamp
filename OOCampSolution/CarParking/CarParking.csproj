@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Car.cs" />
     <Compile Include="FuncParkingBase.cs" />
+    <Compile Include="ParkingDirector.cs" />
     <Compile Include="ParkingManager.cs" />
     <Compile Include="SuperParkingBoy.cs" />
     <Compile Include="SmartParkingBoy.cs" />

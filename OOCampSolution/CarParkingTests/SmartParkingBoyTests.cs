@@ -60,7 +60,7 @@ namespace CarParking.Tests
         {
 
             // given
-            var mySmartParkingBoy = new SmartParkingBoy(new List<ParkingStation> { new ParkingStation("testParking", 10) });
+            var mySmartParkingBoy = new SmartParkingBoy(parkingSystems: new List<ParkingStation> { new ParkingStation("testParking", 10) });
             var myCar1 = new Car();
             var myCar2 = new Car();
             var myCar3 = new Car();
@@ -105,7 +105,7 @@ namespace CarParking.Tests
         public void Parking_UseSecondParkingSystem_WhenFirstZeroAvailable()
         {
             // given
-            var mySmartParkingBoy = new SmartParkingBoy(new List<ParkingStation> { new ParkingStation("park01",6), new ParkingStation("park02", 6) });
+            var mySmartParkingBoy = new SmartParkingBoy(parkingSystems: new List<ParkingStation> { new ParkingStation("park01",6), new ParkingStation("park02", 6) });
             var myCar1 = new Car();
             var myCar2 = new Car();
             var myCar3 = new Car();
@@ -182,7 +182,7 @@ namespace CarParking.Tests
         public void Park_PutInMostAvailableSystem_WhenParkCar()
         {
             // given
-            var mySmartParkingBoy = new SmartParkingBoy(new List<ParkingStation> { new ParkingStation("park01",3), new ParkingStation("park02",6) });
+            var mySmartParkingBoy = new SmartParkingBoy(parkingSystems: new List<ParkingStation> { new ParkingStation("park01",3), new ParkingStation("park02",6) });
 
             // when
             var myCar1 = new Car();

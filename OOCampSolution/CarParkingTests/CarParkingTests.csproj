@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FuncParkingBaseTests.cs" />
+    <Compile Include="ParkingDirectorTests.cs" />
     <Compile Include="ParkingManagerTests.cs" />
     <Compile Include="SuperParkingBoyTests.cs" />
     <Compile Include="SmartParkingBoyTests.cs" />

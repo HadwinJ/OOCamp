@@ -9,10 +9,7 @@ namespace CarParking
     public class SuperParkingBoy : ParkingBoy
     {
 
-        public SuperParkingBoy() : base()
-        { }
-
-        public SuperParkingBoy(List<ParkingStation> _parkingSystems) : base(_parkingSystems)
+        public SuperParkingBoy(String name = "DefaultSuperParkingBoy", List<ParkingStation> parkingSystems = null) : base(name, parkingSystems)
         { }
 
         public override Tuple<string, int> Park(Car myCar)

@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace CarParking
 {
-    public class ParkingManager
+    public class ParkingManager : ParkingBoy
     {
 
-        private List<ParkingBoy> _parkingBoyList = new List<ParkingBoy>();
-        public ParkingManager()
+        protected List<ParkingBoy> _parkingBoyList = new List<ParkingBoy>();
+        public ParkingManager(String name = "DefaultParkingManager", List<ParkingStation> parkingSystems = null) : base(name, parkingSystems)
         { }
 
-        public ParkingManager(List<ParkingBoy> parkingBoyList)
-        {
-            _parkingBoyList = parkingBoyList;
-        }
 
-
-        public int AvailableNumber
+        public override int AvailableNumber
         {
-            get { return _parkingBoyList.Sum(pb => pb.AvailableNumber); }
+            get { return _parkingBoyList.Sum(pb => pb.AvailableNumber) + ParkingStations.Sum(p => p.AvailableNumber); }
         }
 
         public void AddParkingBoy(ParkingBoy myParkingBoy)
@@ -29,16 +24,24 @@ namespace CarParking
             _parkingBoyList.Add(myParkingBoy);
         }
 
-        public Tuple<string, int> Park(Car myCar)
+        public override Tuple<string, int> Park(Car myCar)
         {
-            var parkingBoy = _parkingBoyList.OrderByDescending(p => p.AvailableNumber).FirstOrDefault();
-            return parkingBoy?.Park(myCar);
+            var parkingBoy = _parkingBoyList.Where(p => p.AvailableNumber > 0).OrderByDescending(p => p.AvailableNumber).FirstOrDefault();
+            if (parkingBoy != null)
+            {
+                return parkingBoy.Park(myCar);
+            }
+            return base.Park(myCar);
         }
 
-        public Car Pick(Tuple<string, int> parkingId)
+        public override Car Pick(Tuple<string, int> parkingId)
         {
             var parkingBoy = _parkingBoyList.Where(p => p.ParkingStations.Any(ps => ps.Name == parkingId.Item1)).FirstOrDefault();
-            return parkingBoy.Pick(parkingId);
+            if (parkingBoy != null)
+            {
+                return parkingBoy.Pick(parkingId);
+            }
+            return base.Pick(parkingId);
         }
 
         public Tuple<string, int> Park(Car myCar, ParkingBoy myParkingBoy)

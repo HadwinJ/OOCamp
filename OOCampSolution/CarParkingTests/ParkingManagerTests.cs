@@ -22,9 +22,9 @@ namespace CarParking.Tests
         {
             var car1 = new Car();
 
-            var myParkingBoy = new ParkingBoy(new List<ParkingStation> {
-                new ParkingStation("Station1"),
-                new ParkingStation("Station2")
+            var myParkingBoy = new ParkingBoy(parkingSystems: new List<ParkingStation> {
+                new ParkingStation("Station3"),
+                new ParkingStation("Station4")
             });
             var myParkingManager = new ParkingManager();
 
@@ -34,6 +34,7 @@ namespace CarParking.Tests
             var myReceiving = myParkingManager.Pick(parkingId);
 
             Assert.Equal<Car>(car1, myReceiving);
+            Assert.Equal(new Tuple<string, int>("Station3", 10000), parkingId);
         }
 
         [Fact()]
@@ -43,29 +44,24 @@ namespace CarParking.Tests
             var car2 = new Car();
             var car3 = new Car();
 
-            var myParkingBoy1 = new ParkingBoy(new List<ParkingStation> {
-                new ParkingStation("Station1"),
-                new ParkingStation("Station2")
-            });
 
-            var myParkingBoy2 = new ParkingBoy(new List<ParkingStation> {
+            var myParkingBoy = new ParkingBoy(parkingSystems : new List <ParkingStation> {
                 new ParkingStation("Station3", 3),
                 new ParkingStation("Station4", 2)
             });
 
-            var smartParkingBoy = new SmartParkingBoy(new List<ParkingStation> {
+            var smartParkingBoy = new SmartParkingBoy(parkingSystems : new List <ParkingStation> {
                 new ParkingStation("Station5", 3),
                 new ParkingStation("Station6", 5)
             });
 
             var myParkingManager = new ParkingManager();
 
-            myParkingManager.AddParkingBoy(myParkingBoy1);
-            myParkingManager.AddParkingBoy(myParkingBoy2);
+            myParkingManager.AddParkingBoy(myParkingBoy);
             myParkingManager.AddParkingBoy(smartParkingBoy);
 
             // Act
-            var parkingId1 = myParkingManager.Park(car1, myParkingBoy2);
+            var parkingId1 = myParkingManager.Park(car1, myParkingBoy);
             var parkingId2 = myParkingManager.Park(car2, smartParkingBoy);
 
             var pickbackCar1 = myParkingManager.Pick(parkingId1);
@@ -83,9 +79,9 @@ namespace CarParking.Tests
         public void ShowInitialAvailableSpace()
         {
             // given
-            var myParkingBoy = new ParkingBoy(new List<ParkingStation> {
-                new ParkingStation("Station1"),
-                new ParkingStation("Station2")
+            var myParkingBoy = new ParkingBoy(parkingSystems: new List <ParkingStation> {
+                new ParkingStation("Station3"),
+                new ParkingStation("Station4")
             });
             var myParkingManager = new ParkingManager();
             myParkingManager.AddParkingBoy(myParkingBoy);
@@ -93,7 +89,7 @@ namespace CarParking.Tests
             // when
 
             // then
-            Assert.Equal(20, myParkingManager.AvailableNumber);
+            Assert.Equal(40, myParkingManager.AvailableNumber);
         }
 
         [Fact()]
@@ -101,9 +97,9 @@ namespace CarParking.Tests
         {
             // given
             var myCar = new Car();
-            var myParkingBoy = new ParkingBoy(new List<ParkingStation> {
-                new ParkingStation("Station1"),
-                new ParkingStation("Station2")
+            var myParkingBoy = new ParkingBoy(parkingSystems: new List <ParkingStation> {
+                new ParkingStation("Station3"),
+                new ParkingStation("Station4")
             });
             var myParkingManager = new ParkingManager();
             myParkingManager.AddParkingBoy(myParkingBoy);
@@ -112,7 +108,7 @@ namespace CarParking.Tests
             var parkingId = myParkingBoy.Park(myCar);
 
             // then
-            Assert.Equal(19, myParkingManager.AvailableNumber);
+            Assert.Equal(39, myParkingManager.AvailableNumber);
         }
 
         [Fact()]
@@ -125,10 +121,13 @@ namespace CarParking.Tests
             var myCar4 = new Car();
             var myCar5 = new Car();
             var myCar6 = new Car();
+            var myCar7 = new Car();
+            var myCar8 = new Car();
+            var myCar9 = new Car();
 
-            var myParkingBoy = new ParkingBoy(new List<ParkingStation> {
-                new ParkingStation("Station1", 3),
-                new ParkingStation("Station2", 5)
+            var myParkingBoy = new ParkingBoy(parkingSystems: new List <ParkingStation> {
+                new ParkingStation("Station3", 3),
+                new ParkingStation("Station4", 5)
             });
             var myParkingManager = new ParkingManager();
 
@@ -141,6 +140,9 @@ namespace CarParking.Tests
             var parkingId4 = myParkingManager.Park(myCar4);
             var parkingId5 = myParkingManager.Park(myCar5);
             var parkingId6 = myParkingManager.Park(myCar6);
+            var parkingId7 = myParkingManager.Park(myCar7);
+            var parkingId8 = myParkingManager.Park(myCar8);
+            var parkingId9 = myParkingManager.Park(myCar9);
 
             var myReceiving1 = myParkingManager.Pick(parkingId1);
             var myReceiving2 = myParkingManager.Pick(parkingId2);
@@ -148,6 +150,9 @@ namespace CarParking.Tests
             var myReceiving4 = myParkingManager.Pick(parkingId4);
             var myReceiving5 = myParkingManager.Pick(parkingId5);
             var myReceiving6 = myParkingManager.Pick(parkingId6);
+            var myReceiving7 = myParkingManager.Pick(parkingId7);
+            var myReceiving8 = myParkingManager.Pick(parkingId8);
+            var myReceiving9 = myParkingManager.Pick(parkingId9);
 
             // Assert
             Assert.Equal<Car>(myCar1, myReceiving1);
@@ -156,13 +161,19 @@ namespace CarParking.Tests
             Assert.Equal<Car>(myCar4, myReceiving4);
             Assert.Equal<Car>(myCar5, myReceiving5);
             Assert.Equal<Car>(myCar6, myReceiving6);
+            Assert.Equal<Car>(myCar7, myReceiving7);
+            Assert.Equal<Car>(myCar8, myReceiving8);
+            Assert.Equal<Car>(myCar9, myReceiving9);
 
-            Assert.Equal(new Tuple<string, int>("Station1", 10000), parkingId1);
-            Assert.Equal(new Tuple<string, int>("Station1", 10001), parkingId2);
-            Assert.Equal(new Tuple<string, int>("Station1", 10002), parkingId3);
-            Assert.Equal(new Tuple<string, int>("Station2", 10000), parkingId4);
-            Assert.Equal(new Tuple<string, int>("Station2", 10001), parkingId5);
-            Assert.Equal(new Tuple<string, int>("Station2", 10002), parkingId6);
+            Assert.Equal(new Tuple<string, int>("Station3", 10000), parkingId1);
+            Assert.Equal(new Tuple<string, int>("Station3", 10001), parkingId2);
+            Assert.Equal(new Tuple<string, int>("Station3", 10002), parkingId3);
+            Assert.Equal(new Tuple<string, int>("Station4", 10000), parkingId4);
+            Assert.Equal(new Tuple<string, int>("Station4", 10001), parkingId5);
+            Assert.Equal(new Tuple<string, int>("Station4", 10002), parkingId6);
+            Assert.Equal(new Tuple<string, int>("Station4", 10003), parkingId7);
+            Assert.Equal(new Tuple<string, int>("Station4", 10004), parkingId8);
+            Assert.Equal(new Tuple<string, int>("Park01", 10000), parkingId9);
         }
 
     }
